@@ -10,4 +10,28 @@ public class CalculatorController {
     public int sum(@RequestParam int a,@RequestParam int b) {
         return a+b;
     }
+    @RequestMapping("/min")
+    public int min(@RequestParam int a,@RequestParam int b) {
+        return a-b;
+    }
+    @RequestMapping("/mul")
+    public int mul(@RequestParam int a,@RequestParam int b) {
+        return a*b;
+    }
+    @RequestMapping("/div")
+    public int div(@RequestParam int a,@RequestParam int b) {
+        return a/b;
+    }
+    @RequestMapping("/expo")
+    public int expo(@RequestParam int a,@RequestParam int x){
+        int erg = a;
+        for(int i = 1; i < x;i++){
+            erg *= a ;
+        }
+        return erg;
+    }
+    @RequestMapping("/abs")
+    public int expo(@RequestParam int a){
+       return Math.abs(a);
+    }
 }
